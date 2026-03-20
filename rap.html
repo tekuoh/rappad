@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Rap Pad</title>
+<style>
+body {
+  background: #111;
+  color: white;
+  text-align: center;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+button {
+  font-size: 20px;
+  padding: 30px;
+  border-radius: 10px;
+}
+button:active {
+  background: lime;
+}
+</style>
+</head>
+
+<body>
+
+<h2>🎤 My Rap Pad</h2>
+
+<div class="grid">
+  <button onclick="play('yo')">YO</button>
+  <button onclick="play('ai')">アイ</button>
+  <button onclick="play('hitode')">ヒトデ</button>
+  <button onclick="play('kick')">ドン</button>
+  <button onclick="play('snare')">パン</button>
+  <button onclick="play('fx')">？？？</button>
+</div>
+
+<script>
+const sounds = {
+  yo: new Audio('yo.m4a'),
+  ai: new Audio('ai.m4a'),
+  hitode: new Audio('hitode.m4a'),
+  kick: new Audio('kick.m4a'),
+  snare: new Audio('snare.m4a'),
+  fx: new Audio('fx.m4a')
+};
+
+function play(name){
+  const s = sounds[name];
+  s.currentTime = 0;
+  s.play();
+}
+</script>
+
+</body>
+</html>
